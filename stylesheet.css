@@ -1,0 +1,215 @@
+@font-face {
+    font-family: Electrolize;
+    src: url('fonts/Electrolize-Regular.ttf');
+}
+
+@font-face {
+    font-family: Quantico;
+    src: url('fonts/Quantico-Regular.ttf');
+}
+
+:root.light {
+    --bg-color: #f8eeee;
+    --title-color: #dc2626;
+    --start-btn-bg-color: #fecaca;
+    --start-btn-text-color: black;
+    --btn-transition-color: #f8eeee;
+    --btn-transition-text-color:#dc2626; 
+    --game-bar-color: #fecaca;
+    --select-bg-color: #f8eeee;
+    --game-div-border-color: #fadcd9;
+    --game-ui-text-color: black;
+    --win-text-color: rgb(83, 3, 3);
+}
+
+:root.dark {
+    --bg-color: #470101;
+    --title-color: #fecaca;
+    --start-btn-bg-color: #c02c2c;
+    --start-btn-text-color: white;
+    --btn-transition-color: #470101;
+    --btn-transition-text-color: #fecaca;
+    --game-bar-color: #c02c2c;
+    --select-bg-color: #470101;
+    --game-div-border-color: #c02c2c;
+    --game-ui-text-color: white;
+    --win-text-color: rgb(236, 185, 185);
+}
+
+.hidden {
+    display: none !important;
+}
+
+body, html {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Quantico';
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    align-items: center;
+    line-height: 0;
+}
+
+.theme-btn {
+    border: none;
+    border-radius: 0.2rem;
+    background-color: var(--start-btn-bg-color);
+}
+
+#title-bar {
+    display: flex;
+    gap: 6rem;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#title-bar h3 {
+    font-size: 3rem;
+    justify-self: center;
+    color: var(--title-color);
+}
+
+#title-bar div {
+    width: 4vw;
+}
+
+img {
+    height: 8vh;
+    width: 3vw;
+}
+
+img[src*='toggle-theme-light'] {
+    transform: rotate(180deg);
+}
+
+#start-overlay {
+    justify-self: center;
+    font-size: 1.2rem;
+    display: flex;  
+    gap: 6vw;
+    padding-top: 4rem;
+}
+
+.start-btn {
+    border: none;
+    border-radius: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    width: 10rem;
+    font-family: 'Quantico';
+    font-weight: bold;
+    background-color: var(--start-btn-bg-color);
+    color: var(--start-btn-text-color);
+}
+
+button:hover, #reset:hover, select:hover {
+    cursor: pointer;
+    background-color: var(--btn-transition-color);
+    color: var(--btn-transition-text-color);
+    transition: 1000ms;
+}
+
+#game-div {
+    align-self: center;
+    justify-self: center;
+    grid-template-rows: 1fr 3fr 1fr;
+    color: var(--game-ui-text-color);
+}
+
+#top-bar {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background-color: var(--game-bar-color);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-display {
+    width: 8rem;
+    height: 2rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+#game-ui {
+    display: flex;
+    justify-content: center;
+    border: 1px solid var(--game-div-border-color);
+}
+
+#grid-div {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(75px, 1fr));
+    grid-template-rows: repeat(3, minmax(75px, 1fr));
+    padding: 1rem;
+}
+
+.cell {
+    padding: 0 1rem 0 1rem;
+    font-size: 3rem;
+    font-family: 'Electrolize';
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.4;
+    border: 2px solid var(--title-color);
+}
+
+.left {
+    border-left: none;
+}
+
+.top {
+    border-top: none;
+}
+
+.right {
+    border-right: none;
+}
+
+.bottom {
+    border-bottom: none;
+}
+
+#bottom-bar {
+    display: grid;
+}
+
+#reset {
+    border: none;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    background-color: var(--game-bar-color);
+    color: var(--game-ui-text-color);
+    font-size: 1.3rem;
+    font-family: 'Electrolize';
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    padding: 1rem;
+}
+
+#game-over-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    font-size: 5rem;
+    font-weight: bolder;
+    color: var(--win-text-color);
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

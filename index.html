@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Tic-Tac-Toe</title>
+        <link rel="stylesheet" href="stylesheet.css">
+        <script src="light-dark-script.js" defer></script>
+        <script src="game-script.js" defer></script>
+    </head>
+
+    <body>
+        <div id="title-bar">
+            <div></div>
+            <h3>Tic-Tac-Toe</h3>
+            <button id="toggle-theme" class="theme-btn"><img class="light-icon" src="icons/toggle-theme-light.png"><img class="dark-icon hidden" src="icons/toggle-theme-dark.png"></button>
+        </div>
+
+        <div id="game-div" class="hidden">
+            <div id="top-bar">
+                <div class="player-display">
+                    <p id="p1-status"></p>
+                </div>
+                <div class="player-display">
+                    <p id="p2-status"></p>
+                </div>
+            </div>
+
+            <div id="game-ui">
+                <div id="grid-div">
+                    <div id="0" class="cell left top"></div>
+                    <div id="1" class="cell top"></div>
+                    <div id="2" class="cell right top"></div>
+                    <div id="3" class="cell left"></div>
+                    <div id="4" class="cell"></div>
+                    <div id="5" class="cell right"></div>
+                    <div id="6" class="cell left bottom"></div>
+                    <div id="7" class="cell bottom"></div>
+                    <div id="8" class="cell right bottom"></div>
+                </div>
+            </div>
+
+            <div id="bottom-bar">
+                <button id="reset">Return to Title Screen</button>
+            </div>
+        </div>
+            
+        <div id="start-overlay">
+            <button class="start-btn" id="vs-bot"><img class="light-icon" src="icons/robot-light.png"><img class="dark-icon hidden" src="icons/robot-dark.png">vs Bot</button>
+            <button class="start-btn" id="vs-player"><img class="light-icon" src="icons/player-light.png"><img class="dark-icon hidden" src="icons/player-dark.png">vs Player</button>
+        </div>
+
+        <div id="game-over-overlay" class="hidden">
+            <p>Player 1 wins</p>
+        </div>
+    </body>
+</html>
+
